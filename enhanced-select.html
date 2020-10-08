@@ -1,0 +1,49 @@
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript" src="https://unpkg.com/@lighting-beetle/accessible-autocomplete/dist/accessible-autocomplete.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/@lighting-beetle/accessible-autocomplete/dist/accessible-autocomplete.min.css">
+</head>
+
+<body>
+  <form action="enhanced-select-submit.html">
+    <select id="autocomplete">
+      <option value></option>
+      <option>banana</option>
+      <option>apple</option>
+      <option>apricot</option>
+      <option>blueberry</option>
+      <option>fig</option>
+      <option>lime</option>
+      <option>lemon</option>
+      <option>mango</option>
+      <option>orange</option>
+      <option>raspberry</option>
+      <option>watermelon</option>
+    </select>
+
+    <button type="submit">submit</button>
+  </form>
+
+  <script type="text/javascript">
+    accessibleAutocomplete.enhanceSelectElement({
+      selectElement: document.querySelector('#autocomplete'),
+      autoselect: true,
+      defaultValue: undefined,
+      menuClassName: 'dropdown-menu',
+      optionClassName: 'dropdown-item',
+      displayMenu: 'overlay',
+    })
+
+    window.addEventListener('pageshow', e => {
+      console.log(e.persisted);
+    })
+  </script>
+</body>
+</html>
